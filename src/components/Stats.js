@@ -17,7 +17,7 @@ export default function Stats() {
           <p className="m-0 w-25">XP</p>
           <ProgressBar className="w-75" now={charStats.xp} />
         </li>
-        {/* <li class="str-bar bar my-1 d-flex align-items-center">
+        <li class="str-bar bar my-1 d-flex align-items-center">
           <p className="m-0 w-25">STR</p>
           <ProgressBar className="w-75" now={charStats.str} />
         </li>
@@ -28,7 +28,7 @@ export default function Stats() {
         <li class="magic-bar bar my-1 d-flex align-items-center">
           <p className="m-0 w-25">MGK</p>
           <ProgressBar className="w-75" now={charStats.mgk} />
-        </li> */}
+        </li>
       </ul>
     </div>
   );

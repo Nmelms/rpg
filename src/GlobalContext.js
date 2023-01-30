@@ -11,13 +11,21 @@ export function GlobalProvider({ children }) {
     def: 5,
     mgk: 5,
     gold: 50,
-    inventorySlots: [
+    equippedSlots: [
       { location: "Head", item: "empty" },
       { location: "Arms", item: "empty" },
       { location: "legs", item: "empty" },
       { location: "Feet", item: "empty" },
       { location: "Primary", item: "empty" },
       { location: "Secondary", item: "empty" },
+    ],
+    inventorySlots: [
+      { item: "empty" },
+      { item: "empty" },
+      { item: "empty" },
+      { item: "empty" },
+      { item: "empty" },
+      { item: "empty" },
     ],
   };
   return (

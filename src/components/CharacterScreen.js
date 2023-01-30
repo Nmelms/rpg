@@ -1,5 +1,6 @@
 import React from "react";
 import Stats from "./Stats";
+import Inventory from "./Inventory";
 import Equiped from "./Equiped";
 
 export default function CharacterScreen() {
@@ -7,6 +8,7 @@ export default function CharacterScreen() {
     <div>
       <Stats />
       <Equiped />
+      <Inventory />
     </div>
   );
 }
