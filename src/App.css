@@ -22,10 +22,8 @@ ul {
 
 .stats {
   border: 2px solid black;
-  min-height: 200px;
-  min-width: 200px;
-  height: 200px;
-  width: 200px;
+  height: fit-content;
+  width: 100vw;
 }
 .stats-list {
   text-decoration: none;

@@ -1,10 +1,12 @@
 import "./App.css";
-import Stats from "./components/Stats";
-
+import CharacterScreen from "./components/CharacterScreen";
+import { GlobalProvider } from "./GlobalContext";
 function App() {
   return (
     <div className="App">
-      <Stats />
+      <GlobalProvider>
+        <CharacterScreen />
+      </GlobalProvider>
     </div>
   );
 }
