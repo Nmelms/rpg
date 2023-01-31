@@ -7,9 +7,17 @@ export default function Equiped() {
   let equipmentkeys = Object.keys(charStats.equipmentSlots);
   console.log(equipmentkeys);
 
-  const unequip = () => {
+  const unequip = (item) => {
     setCharStats((draft) => {
-      draft.equipmentSlots.head.item = "none";
+      for (let i = 0; i < draft.inventorySlots.length; i++) {
+        if (draft.inventorySlots[i].item === "empty") {
+          draft.inventorySlots[i].item = draft.equipmentSlots[item].item;
+          draft.inventorySlots[i].img = draft.equipmentSlots[item].img;
+          break;
+        }
+      }
+      draft.equipmentSlots[item].item = "none";
+      draft.equipmentSlots[item].img = "";
     });
   };
 
@@ -28,7 +36,7 @@ export default function Equiped() {
                 />
                 <p className="col-4">{charStats.equipmentSlots[item].item}</p>
               </div>
-              <Button onClick={unequip} variant="danger">
+              <Button onClick={() => unequip(item)} variant="danger">
                 UnEquip
               </Button>
             </div>
