@@ -1,9 +1,10 @@
 import { createContext, useState } from "react";
+import { useImmer } from "use-immer";
 
 const GlobalContext = createContext();
 
 export function GlobalProvider({ children }) {
-  const charStats = {
+  const [charStats, setCharStats] = useImmer({
     lvl: 1,
     hp: 100,
     xp: 50,
@@ -11,14 +12,39 @@ export function GlobalProvider({ children }) {
     def: 5,
     mgk: 5,
     gold: 50,
-    equippedSlots: [
-      { location: "Head", item: "empty" },
-      { location: "Arms", item: "empty" },
-      { location: "legs", item: "empty" },
-      { location: "Feet", item: "empty" },
-      { location: "Primary", item: "empty" },
-      { location: "Secondary", item: "empty" },
-    ],
+    equipmentSlots: {
+      head: {
+        item: "Barbarian Helmet",
+        img: "/assets/helmet.png",
+      },
+      arms: {
+        item: "",
+        img: "",
+      },
+      legs: {
+        item: "",
+        img: "",
+      },
+      feet: {
+        item: "",
+        img: "",
+      },
+      primary: {
+        item: "",
+        img: "",
+      },
+      secondary: {
+        item: "",
+        img: "",
+      },
+    },
+    // { location: "Head", item: "Barbarian helmet", img: "/assets/helmet.png" },
+    // { location: "Arms", item: "empty" },
+    // { location: "legs", item: "empty" },
+    // { location: "Feet", item: "empty" },
+    // { location: "Primary", item: "empty" },
+    // { location: "Secondary", item: "empty" },
+
     inventorySlots: [
       { item: "empty" },
       { item: "empty" },
@@ -27,9 +53,9 @@ export function GlobalProvider({ children }) {
       { item: "empty" },
       { item: "empty" },
     ],
-  };
+  });
   return (
-    <GlobalContext.Provider value={{ charStats }}>
+    <GlobalContext.Provider value={{ charStats, setCharStats }}>
       {children}
     </GlobalContext.Provider>
   );
