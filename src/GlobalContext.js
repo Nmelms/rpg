@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { barbHelmet, leatherChest } from "./components/items/Armor";
 import { useImmer } from "use-immer";
 
 const GlobalContext = createContext();
@@ -14,40 +15,34 @@ export function GlobalProvider({ children }) {
     gold: 50,
     equipmentSlots: {
       head: {
-        item: "Barbarian Helmet",
-        img: "/assets/helmet.png",
+        item: "empty",
+        img: "",
       },
       arms: {
-        item: "",
+        item: "empty",
         img: "",
       },
       legs: {
-        item: "",
+        item: "empty",
         img: "",
       },
       feet: {
-        item: "",
+        item: "empty",
         img: "",
       },
       primary: {
-        item: "",
+        item: "empty",
         img: "",
       },
       secondary: {
-        item: "",
+        item: "empty",
         img: "",
       },
     },
-    // { location: "Head", item: "Barbarian helmet", img: "/assets/helmet.png" },
-    // { location: "Arms", item: "empty" },
-    // { location: "legs", item: "empty" },
-    // { location: "Feet", item: "empty" },
-    // { location: "Primary", item: "empty" },
-    // { location: "Secondary", item: "empty" },
 
     inventorySlots: [
-      { item: "empty" },
-      { item: "empty" },
+      barbHelmet,
+      leatherChest,
       { item: "empty" },
       { item: "empty" },
       { item: "empty" },

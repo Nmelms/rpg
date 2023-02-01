@@ -5,7 +5,6 @@ import { Button } from "react-bootstrap";
 export default function Equiped() {
   const { charStats, setCharStats } = useContext(GlobalContext);
   let equipmentkeys = Object.keys(charStats.equipmentSlots);
-  console.log(equipmentkeys);
 
   const unequip = (item) => {
     setCharStats((draft) => {
@@ -13,10 +12,11 @@ export default function Equiped() {
         if (draft.inventorySlots[i].item === "empty") {
           draft.inventorySlots[i].item = draft.equipmentSlots[item].item;
           draft.inventorySlots[i].img = draft.equipmentSlots[item].img;
+          draft.inventorySlots[i].slot = draft.equipmentSlots[item].slot;
           break;
         }
       }
-      draft.equipmentSlots[item].item = "none";
+      draft.equipmentSlots[item].item = "empty";
       draft.equipmentSlots[item].img = "";
     });
   };
